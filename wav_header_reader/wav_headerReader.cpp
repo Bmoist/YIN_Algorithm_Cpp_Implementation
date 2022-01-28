@@ -31,6 +31,17 @@ typedef struct WAV_HEADER {
 
 } wav_hdr;
 
+// find the file size
+int getFileSize(FILE *inFile) {
+  int fileSize = 0;
+  fseek(inFile, 0, SEEK_END);
+
+  fileSize = ftell(inFile);
+
+  fseek(inFile, 0, SEEK_SET);
+  return fileSize;
+}
+
 // Function prototypes
 int getFileSize(FILE *inFile);
 
@@ -122,14 +133,4 @@ int maain(int argc, char *argv[]) {
 
   getchar();
   return 0;
-}
-// find the file size
-int getFileSize(FILE *inFile) {
-  int fileSize = 0;
-  fseek(inFile, 0, SEEK_END);
-
-  fileSize = ftell(inFile);
-
-  fseek(inFile, 0, SEEK_SET);
-  return fileSize;
 }
