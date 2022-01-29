@@ -34,3 +34,7 @@
 # Ignore vscode settings
 .vscode/*
 .DS_Store
+.cache
+
+# Cmake ignore
+build
